@@ -4,6 +4,8 @@ const hbs = require('hbs')
 
 const app = express()
 
+const port = process.env.PORT || 2000
+
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -19,7 +21,7 @@ app.get('', (req, res) => {
     res.render('index')
     })
 
-app.listen(2000, () => {
+app.listen(port, () => {
         console.log('server is up')
-        console.log('http://localhost:2000')
+        console.log('http://localhost:'+port)
 })
